@@ -11,6 +11,7 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <SplitView DisplayMode="CompactInline"
+                           CompactPaneLength="{TemplateBinding ClosePaneLength}"
                            IsPaneOpen="{TemplateBinding IsMenuExpanded}"
                            OpenPaneLength="{TemplateBinding OpenPaneLength}">
                     <SplitView.Pane>

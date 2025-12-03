@@ -70,11 +70,16 @@ public class SukiSideMenu : TreeView
     public int OpenPaneLength
     {
         get => GetValue(OpenPaneLengthProperty);
-        set => SetValue(OpenPaneLengthProperty, value switch
-        {
-            >= 200 => value,
-            _ => throw new ArgumentOutOfRangeException($"OpenPaneLength must be greater than or equal to 200, but was {value}")
-        });
+        set => SetValue(OpenPaneLengthProperty, value);
+    }
+    
+    public static readonly StyledProperty<int> ClosePaneLengthProperty =
+        AvaloniaProperty.Register<SukiSideMenu, int>(nameof(ClosePaneLength), defaultValue: 48);
+
+    public int ClosePaneLength
+    {
+        get => GetValue(ClosePaneLengthProperty);
+        set => SetValue(ClosePaneLengthProperty, value);
     }
 
     public static readonly StyledProperty<HorizontalAlignment> TogglePaneButtonPositionProperty =
