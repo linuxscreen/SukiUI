@@ -64,11 +64,12 @@
                                     Opacity="0.1" />
 
 
+                            <!-- Background="{TemplateBinding Background}" -->
                             <ContentPresenter x:Name="PART_ContentPresenter"
                                               Margin="{TemplateBinding Padding}"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Background="{TemplateBinding Background}"
+                                              Background="{TemplateBinding BackgroundColor}"
                                               BackgroundSizing="{TemplateBinding BackgroundSizing}"
                                               BorderBrush="{TemplateBinding BorderBrush}"
                                               BorderThickness="{TemplateBinding BorderThickness}"

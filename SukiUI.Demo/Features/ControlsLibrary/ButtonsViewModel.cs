@@ -13,6 +13,8 @@ public partial class ButtonsViewModel() : DemoPageBase("Buttons", MaterialIconKi
     [RelayCommand]
     private Task ButtonClicked()
     {
+        Console.WriteLine("Button clicked");
+        return Task.CompletedTask;
         if (IsBusy)
             return Task.CompletedTask;
 

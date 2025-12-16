@@ -3,7 +3,6 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using SukiUI.Controls;
 using SukiUI.Demo.Controls;
-using SukiUI.Utilities.Effects;
 using System;
 
 namespace SukiUI.Demo.Features.Effects
@@ -28,11 +27,7 @@ namespace SukiUI.Demo.Features.Effects
             _toyRenderer = this.FindControl<ShaderToyRenderer>("ShaderToyRenderer")!;
 
             _errorText = this.FindControl<InfoBar>("ErrorText")!;
-
-            var effect = SukiEffect.FromEmbeddedResource("shaderart");
-
-            _textEditor.Text = effect.ToString();
-            _toyRenderer.SetEffect(effect);
+            
         }
 
         private void Button_OnClick(object? sender, RoutedEventArgs e)
@@ -45,8 +40,6 @@ namespace SukiUI.Demo.Features.Effects
             try
             {
                 _errorText.Message = string.Empty;
-                var effect = SukiEffect.FromString(_textEditor.Text);
-                _toyRenderer.SetEffect(effect);
                 _errorText.IsVisible = false;
             }
             catch (Exception ex)

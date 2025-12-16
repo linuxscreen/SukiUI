@@ -34,6 +34,7 @@
                                        BackgroundStyle="{TemplateBinding BackgroundStyle}"
                                        BackgroundTransitionTime="{TemplateBinding BackgroundTransitionTime}"
                                        BackgroundTransitionsEnabled="{TemplateBinding BackgroundTransitionsEnabled}"
+                                       BackgroundColor="{TemplateBinding BackgroundColor}"
                                        CornerRadius="{TemplateBinding RootCornerRadius}"
                                        Foreground="{TemplateBinding Foreground}"
                                        Hosts="{Binding Hosts, RelativeSource={RelativeSource AncestorType={x:Type suki:SukiWindow}}}">

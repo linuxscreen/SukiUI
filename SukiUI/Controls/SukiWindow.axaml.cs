@@ -330,6 +330,16 @@ public class SukiWindow : Window, IDisposable
         get => GetValue(BackgroundAnimationEnabledProperty);
         set => SetValue(BackgroundAnimationEnabledProperty, value);
     }
+    
+    public static readonly StyledProperty<string> BackgroundColorProperty =
+        SukiMainHost.BackgroundColorProperty.AddOwner<SukiWindow>();
+
+    /// <inheritdoc cref="SukiBackground.AnimationEnabled"/>
+    public string BackgroundColor
+    {
+        get => GetValue(BackgroundColorProperty);
+        set => SetValue(BackgroundColorProperty, value);
+    }
 
     public static readonly StyledProperty<SukiBackgroundStyle> BackgroundStyleProperty =
         SukiMainHost.BackgroundStyleProperty.AddOwner<SukiWindow>();

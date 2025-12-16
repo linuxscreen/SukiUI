@@ -20,7 +20,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.Skia" />
-    <PackageReference Include="SkiaSharp" />
+<!--    <PackageReference Include="SkiaSharp" />-->
     <PackageReference Include="SkiaSharp.NativeAssets.Linux" />
     <PackageReference Include="Avalonia.Controls.DataGrid" />
     <PackageReference Include="Avalonia.Themes.Simple" />

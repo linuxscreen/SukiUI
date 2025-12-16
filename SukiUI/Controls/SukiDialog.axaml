@@ -15,16 +15,17 @@
                             CornerRadius="25">
                         <Panel>
                             
-                            <suki:GlassCard IsVisible="{TemplateBinding ShowCardBackground}" ClipToBounds="True" CornerRadius="25">
-                                <glassMorphism:SukiBlurBackground Margin="-200"  />
-                            </suki:GlassCard>
+                            <!-- 弹窗毛玻璃效果， 导致透明 -->
+                            <!-- <suki:GlassCard IsVisible="{TemplateBinding ShowCardBackground}" ClipToBounds="True" CornerRadius="25"> -->
+                            <!--     <glassMorphism:SukiBlurBackground Margin="-200"  /> -->
+                            <!-- </suki:GlassCard> -->
                             
-                            
-                          <!--  <Border IsVisible="{TemplateBinding ShowCardBackground}" CornerRadius="25"
+                            <!-- 启用如下，临时修复透明问题 todo -->
+                          <Border IsVisible="{TemplateBinding ShowCardBackground}" CornerRadius="25"
                                     Background="{DynamicResource SukiCardBackground}">
                                 <Panel Background="{DynamicResource PopupGradientBrush}" Margin="-5">
                                 </Panel>
-                            </Border> -->
+                            </Border>
                             
                             <Grid RowDefinitions="Auto,Auto,*,Auto"
                                   ColumnDefinitions="*"

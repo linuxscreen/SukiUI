@@ -49,12 +49,13 @@
                                 Orientation="Horizontal"
                                 VerticalAlignment="Center">
 
+                                <!-- 修复文字不居中问题 -->
+                                <!-- Margin="15,0,15,0" --> 
                                 <ContentPresenter
                                     Content="{TemplateBinding Content}"
                                     ContentTemplate="{TemplateBinding ContentTemplate}"
                                     HorizontalAlignment="Center"
                                     HorizontalContentAlignment="Center"
-                                    Margin="15,0,15,0"
                                     Name="PART_ContentPresenter"
                                     RecognizesAccessKey="True"
                                     VerticalAlignment="Center" />

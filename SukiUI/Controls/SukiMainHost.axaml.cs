@@ -32,6 +32,15 @@ public class SukiMainHost : ContentControl
         get => GetValue(BackgroundStyleProperty);
         set => SetValue(BackgroundStyleProperty, value);
     }
+    
+    public static readonly StyledProperty<string> BackgroundColorProperty =
+        AvaloniaProperty.Register<SukiMainHost, string>(nameof(BackgroundColor));
+    
+    public string BackgroundColor
+    {
+        get => GetValue(BackgroundColorProperty);
+        set => SetValue(BackgroundColorProperty, value);
+    }
 
     public static readonly StyledProperty<string?> BackgroundShaderFileProperty =
         AvaloniaProperty.Register<SukiMainHost, string?>(nameof(BackgroundShaderFile));

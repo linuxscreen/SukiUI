@@ -2,7 +2,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Rendering.Composition;
 using SukiUI.Enums;
-using SukiUI.Utilities.Effects;
 
 namespace SukiUI.Controls
 {
@@ -103,10 +102,8 @@ namespace SukiUI.Controls
             base.OnAttachedToVisualTree(e);
             var comp = ElementComposition.GetElementVisual(this)?.Compositor;
             if (comp == null || _customVisual?.Compositor == comp) return;
-            var visualHandler = new EffectBackgroundDraw();
-            _customVisual = comp.CreateCustomVisual(visualHandler);
             ElementComposition.SetElementChildVisual(this, _customVisual);
-            _customVisual.SendHandlerMessage(TransitionTime);
+            _customVisual?.SendHandlerMessage(TransitionTime);
             HandleBackgroundStyleChanges();
             Update();
         }
@@ -123,33 +120,20 @@ namespace SukiUI.Controls
             if (change.Property == BoundsProperty)
                 Update();
             else if (change.Property == ForceSoftwareRenderingProperty && change.NewValue is bool forceSoftwareRendering)
-                _customVisual?.SendHandlerMessage(forceSoftwareRendering
-                    ? EffectDrawBase.EnableForceSoftwareRendering
-                    : EffectDrawBase.DisableForceSoftwareRendering);
+                return;
             else if(change.Property == TransitionsEnabledProperty && change.NewValue is bool transitionEnabled)
-                _customVisual?.SendHandlerMessage(transitionEnabled
-                    ? EffectBackgroundDraw.EnableTransitions
-                    : EffectBackgroundDraw.DisableTransitions);
+                return;
             else if(change.Property == TransitionTimeProperty && change.NewValue is double transitionTime)
                 _customVisual?.SendHandlerMessage(transitionTime);
             else if (change.Property == AnimationEnabledProperty && change.NewValue is bool animationEnabled)
-                _customVisual?.SendHandlerMessage(animationEnabled
-                    ? EffectDrawBase.StartAnimations
-                    : EffectDrawBase.StopAnimations);
+               return;
             else if(change.Property == StyleProperty || change.Property == ShaderFileProperty || change.Property == ShaderCodeProperty)
                 HandleBackgroundStyleChanges();
         }
 
         private void HandleBackgroundStyleChanges()
         {
-            SukiEffect effect;
-            if (ShaderFile is not null)
-                effect = SukiEffect.FromEmbeddedResource(ShaderFile);
-            else if (ShaderCode is not null)
-                effect = SukiEffect.FromString(ShaderCode);
-            else
-                effect = SukiEffect.FromEmbeddedResource(Style.ToString());
-            _customVisual?.SendHandlerMessage(effect);
+
         }
     }
 }
