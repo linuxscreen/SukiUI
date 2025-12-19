@@ -15,7 +15,7 @@
                             CornerRadius="25">
                         <Panel>
                             
-                            <!-- 弹窗毛玻璃效果， 导致透明 -->
+                            <!-- 弹窗毛玻璃效果， 导致透明, dialog内存泄露, 和skia有关 -->
                             <!-- <suki:GlassCard IsVisible="{TemplateBinding ShowCardBackground}" ClipToBounds="True" CornerRadius="25"> -->
                             <!--     <glassMorphism:SukiBlurBackground Margin="-200"  /> -->
                             <!-- </suki:GlassCard> -->
