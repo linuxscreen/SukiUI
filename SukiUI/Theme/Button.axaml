@@ -249,18 +249,18 @@
                 <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor120}" />
             </Style>
         </Style>
-        <Style Selector="^:pressed:pointerover">
-            <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
-            <Setter Property="RenderTransform" Value="scale(0.97)" />
-            <Style Selector="^ /template/ Border">
-                <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
-            </Style>
-            <Style Selector="^.Icon /template/ Border">
-                <!--  <Setter Property="Background" Value="{DynamicResource SukiCardBackground}" /> -->
-                <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
-                <Setter Property="RenderTransform" Value="scale(0.95)" />
-            </Style>
-        </Style>
+        <!-- <Style Selector="^:pressed:pointerover"> -->
+        <!--     <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" /> -->
+        <!--     <Setter Property="RenderTransform" Value="scale(0.97)" /> -->
+        <!--     <Style Selector="^ /template/ Border"> -->
+        <!--         <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" /> -->
+        <!--     </Style> -->
+        <!--     <Style Selector="^.Icon /template/ Border"> -->
+        <!--         ~1~  <Setter Property="Background" Value="{DynamicResource SukiCardBackground}" /> @1@ -->
+        <!--         <Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" /> -->
+        <!--         <Setter Property="RenderTransform" Value="scale(0.95)" /> -->
+        <!--     </Style> -->
+        <!-- </Style> -->
 
         <!--  Classes  -->
         <Style Selector="^.NoPressedAnimation">
@@ -312,7 +312,7 @@
             <Setter Property="Padding" Value="11,8" />
             <Setter Property="CornerRadius" Value="5" />
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor120}" />
+            <!-- <Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor120}" /> -->
             <!--  Events  -->
             <Style Selector="^:pointerover, ^:flyout-open">
                 <Setter Property="Background" Value="Transparent" />

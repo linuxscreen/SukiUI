@@ -139,6 +139,11 @@
                 <Setter Property="Cursor" Value="Hand" />
             </Style>
         </Style>
+        <Style Selector="^[IsEnabled=False]">
+            <Style Selector="^ /template/ Border#PART_Border">
+                <Setter Property="Opacity" Value="0.5" />
+            </Style>
+        </Style>
         <Style Selector="^[IsSelected=True]">
             <Style Selector="^ /template/ Border#PART_Border">
                 <Setter Property="Background" Value="{DynamicResource SukiPrimaryColor10}" />
