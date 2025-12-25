@@ -671,12 +671,12 @@ public class SukiWindow : Window, IDisposable
             }
         }
 
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) // only for windows platform
-        {
-            Margin = new Thickness(newState == WindowState.Maximized
-                ? 7
-                : 0);
-        }
+        // if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) // only for windows platform
+        // {
+        //     Margin = new Thickness(newState == WindowState.Maximized
+        //         ? 7
+        //         : 0);
+        // }
 
         this.ConstrainMaxSizeToScreenRatio(MaxWidthScreenRatio, MaxHeightScreenRatio);
     }
