@@ -20,8 +20,9 @@
         <Setter Property="TransparencyLevelHint" Value="Transparent" />
         <Setter Property="SystemDecorations" Value="{OnPlatform Full, Linux=None, x:TypeArguments=SystemDecorations}" />
         <Setter Property="ExtendClientAreaChromeHints" Value="NoChrome" />
-        <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1" />
-        <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+        <!-- <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1" /> -->
+        <!-- 窗口顶部异常PointerExited -->
+        <!-- <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" /> -->
         <Setter Property="Foreground" Value="{DynamicResource SukiText}" />
         <Setter Property="FlowDirection" Value="{DynamicResource FlowDirectionPrimary}" />
         <Setter Property="Template">
