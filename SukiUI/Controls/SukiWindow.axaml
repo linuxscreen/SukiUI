@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:icons="clr-namespace:SukiUI.Content"
+                    xmlns:platform="using:Avalonia.Platform"
                     xmlns:suki="clr-namespace:SukiUI.Controls">
     <Design.PreviewWith>
         <suki:SukiWindow Title="SukiUI Window"
@@ -19,7 +20,7 @@
         <Setter Property="Margin" Value="0" />
         <Setter Property="TransparencyLevelHint" Value="Transparent" />
         <Setter Property="SystemDecorations" Value="{OnPlatform Full, Linux=None, x:TypeArguments=SystemDecorations}" />
-        <Setter Property="ExtendClientAreaChromeHints" Value="NoChrome" />
+        <Setter Property="ExtendClientAreaChromeHints" Value="{OnPlatform NoChrome, macOS=SystemChrome, x:TypeArguments=platform:ExtendClientAreaChromeHints}" />
         <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1" />
         <!-- 窗口顶部异常PointerExited -->
         <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
@@ -49,7 +50,7 @@
                                                             CornerRadius="0"
                                                             IsAnimated="False"
                                                             IsVisible="{TemplateBinding ShowTitlebarBackground}" />
-                                            <DockPanel Margin="12,9" LastChildFill="True">
+                                            <DockPanel Margin="12,9" LastChildFill="True" IsVisible="{TemplateBinding ShowTitlebarContent}">
                                                 <StackPanel VerticalAlignment="Center"
                                                             DockPanel.Dock="Right"
                                                             Orientation="Horizontal"

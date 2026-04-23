@@ -126,4 +126,12 @@
     <None Remove="Content\Shaders\Background\backgroundshadcn.sksl" />
     <EmbeddedResource Include="Content\Shaders\Background\backgroundshadcn.sksl" />
   </ItemGroup>
+
+  <PropertyGroup Condition="$([MSBuild]::IsOsPlatform('OSX'))">
+        <DefineConstants>MACOS</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$([MSBuild]::IsOsPlatform('Windows'))">
+        <DefineConstants>WINDOWS</DefineConstants>
+    </PropertyGroup>
 </Project>

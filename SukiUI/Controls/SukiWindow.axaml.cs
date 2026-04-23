@@ -283,6 +283,18 @@ public class SukiWindow : Window, IDisposable
         set => SetValue(ShowTitlebarBackgroundProperty, value);
     }
 
+    public static readonly StyledProperty<bool> ShowTitlebarContentProperty =
+        AvaloniaProperty.Register<SukiWindow, bool>(nameof(ShowTitlebarContent), defaultValue: true);
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the title bar content is visible.
+    /// </summary>
+    public bool ShowTitlebarContent
+    {
+        get => GetValue(ShowTitlebarContentProperty);
+        set => SetValue(ShowTitlebarContentProperty, value);
+    }
+
     public static readonly StyledProperty<bool> CanFullScreenProperty =
         AvaloniaProperty.Register<SukiWindow, bool>(nameof(CanFullScreen));
 
@@ -481,6 +493,9 @@ public class SukiWindow : Window, IDisposable
         // Create handlers for buttons
         if (e.NameScope.Find<GlassCard>("PART_TitleBarBackground") is { } titleBar)
         {
+#if MACOS
+            titleBar.Height = 28;
+#endif
             titleBar.PointerPressed += OnTitleBarPointerPressed;
             titleBar.PointerReleased += OnTitleBarPointerReleased;
             titleBar.DoubleTapped += OnMaximizeButtonClicked;
