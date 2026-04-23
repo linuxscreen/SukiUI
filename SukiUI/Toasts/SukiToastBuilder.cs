@@ -84,10 +84,16 @@ public class SukiToastBuilder
                     : new Thickness(14, 9, 0, 12),
             };
 
-            var styles = style.GetSetFlagsIgnoring(SukiButtonStyles.Standard)
-                .Select(v => v.ToString());
-
-            btn.Classes.AddRange(styles);
+            var styleFlags = Convert.ToInt64(style);
+            var styleFlag = Convert.ToInt64(SukiButtonStyles.Basic);
+            for (int i = 0; i < SukiButtonStylesHelper.StylesCount - 1; i++)
+            {
+                if ((styleFlags & (styleFlag << i)) != 0)
+                {
+                    var addsStyle = (SukiButtonStyles)(styleFlag << i);
+                    btn.Classes.Add(addsStyle.ToString());
+                }
+            }
         }
 
         btn.Tag = (action, dismissOnClick);

@@ -26,3 +26,8 @@ public enum SukiButtonStyles
     NoPressedAnimation = (1 << 14),
     WindowControlsButton = (1 << 15),
 }
+
+public static class SukiButtonStylesHelper
+{
+    public static int StylesCount = 16;
+}
